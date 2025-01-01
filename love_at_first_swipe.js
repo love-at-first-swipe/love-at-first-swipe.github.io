@@ -24,8 +24,12 @@ export const submitRSVP = async (name, surname, weddingAttendance, secondDayAtte
     if (error) {
       console.error('Error adding RSVP data:', error);
       alert('There was an error submitting your RSVP. Please try again.');
+
+      return false;
     } else {
       console.log('RSVP submitted successfully:', data);
       alert('Your RSVP has been submitted. Thank you!');
+
+      return true;
     }
   };

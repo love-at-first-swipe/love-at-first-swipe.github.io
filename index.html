@@ -529,10 +529,13 @@
             }
 
             // Call submitRSVP with form values
-            await submitRSVP(name, surname, weddingAttendance, secondDayAttendance, dietaryRequirements);
+            const sendForm = await submitRSVP(name, surname, weddingAttendance, secondDayAttendance, dietaryRequirements);
         
             // Reset form
             event.target.reset();
+            if (sendForm){
+                $('#rsvpModal').modal('hide');
+            }
         });
     </script>
 </body>
