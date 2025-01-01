@@ -511,6 +511,8 @@
     <!-- RSVP submission -->
     <script type="module">
         import { submitRSVP } from './love_at_first_swipe.js';
+
+        const rsvpModal = new bootstrap.Modal(document.getElementById('rsvpModal'));
       
         document.querySelector('form').addEventListener('submit', async (event) => {
             event.preventDefault(); // Prevent default form submission behaviour
@@ -534,7 +536,7 @@
             // Reset form
             event.target.reset();
             if (sendForm){
-                $('#rsvpModal').modal('hide');
+                rsvpModal.hide();
             }
         });
     </script>
