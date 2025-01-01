@@ -153,6 +153,9 @@
         .footer-section>p {
             margin: 0.3em 2em;
         }
+        #rsvpModal {
+            color: rgb(0,0,20);
+        }
     </style>
 </head>
 
@@ -174,7 +177,7 @@
                         <p class="h4">Sunday, 6th July 2025 | 2:30 PM</br>
                             Markree Castle, Sligo</p>
                     </div>
-                    <a href="#" class="rsvp-button mt-3 btn btn-lg btn-light">RSVP</a>
+                    <a href="#" class="rsvp-button mt-3 btn btn-lg btn-light" data-bs-toggle="modal" data-bs-target="#rsvpModal">RSVP</a>
                 </div>
                 <div class="col-md-6">
                     <div class="image-container">
@@ -359,7 +362,7 @@
                             <li>Open Mic: 9PM</li>
                           </ul>
                     </div>
-                    <a href="#" class="rsvp-button mt-3 btn btn-lg btn-light">RSVP</a>
+                    <a href="#" class="rsvp-button mt-3 btn btn-lg btn-light" data-bs-toggle="modal" data-bs-target="#rsvpModal">RSVP</a>
                     <div class="position-absolute" style="top:-100px;right:0;">
                         <img src="https://love-at-first-swipe.github.io/images/champagne.png" class="img-fluid" alt="Champagne glasses"
                         style="max-height: 200px;">
@@ -452,12 +455,85 @@
         <p>Designed with love for Gráinne & Andy's Wedding</p>
     </footer>
 
+    <!-- RSVP Modal -->
+    <div class="modal fade" id="rsvpModal" tabindex="-1" aria-labelledby="rsvpModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h5 class="modal-title" id="rsvpModalLabel">RSVP</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+            <form>
+                <div class="mb-3">
+                <label for="name" class="form-label">Name</label>
+                <input type="text" class="form-control" id="name" placeholder="Enter your name" required>
+                </div>
+                <div class="mb-3">
+                <label for="surname" class="form-label">Surname</label>
+                <input type="text" class="form-control" id="surname" placeholder="Enter your surname" required>
+                </div>
+                <div class="mb-3">
+                <label for="weddingAttendance" class="form-label">Will you attend the wedding?</label>
+                <select class="form-select" id="weddingAttendance" required>
+                    <option value="" disabled selected>Choose...</option>
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                </select>
+                </div>
+                <div class="mb-3">
+                <label for="secondDayAttendance" class="form-label">Will you attend the 2nd day wedding celebration?</label>
+                <select class="form-select" id="secondDayAttendance" required>
+                    <option value="" disabled selected>Choose...</option>
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                </select>
+                </div>
+                <div class="mb-3">
+                <label for="dietaryRequirements" class="form-label">Dietary Requirements and other comments</label>
+                <textarea class="form-control" id="dietaryRequirements" rows="3" placeholder="Specify any dietary restrictions or allergies"></textarea>
+                </div>
+                <button type="submit" class="btn btn-dark">Submit</button>
+            </form>
+            </div>
+        </div>
+        </div>
+    </div>
+
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Countdown clock -->
     <script>
         new FlipDown(1751808600, {
             theme: "light",
         }).start();
+    </script>
+    <!-- RSVP submission -->
+    <script type="module">
+        import { submitRSVP } from './love_at_first_swipe.js';
+      
+        document.querySelector('form').addEventListener('submit', async (event) => {
+            event.preventDefault(); // Prevent default form submission behaviour
+        
+            // Get form values
+            const name = document.getElementById('name').value.trim();
+            const surname = document.getElementById('surname').value.trim();
+            const weddingAttendance = document.getElementById('weddingAttendance').value;
+            const secondDayAttendance = document.getElementById('secondDayAttendance').value;
+            const dietaryRequirements = document.getElementById('dietaryRequirements').value.trim();
+
+            // Validate required fields
+            if (!name || !surname || !weddingAttendance || !secondDayAttendance) {
+                alert('Please fill out all required fields.');
+                return;
+            }
+
+            // Call submitRSVP with form values
+            await submitRSVP(name, surname, weddingAttendance, secondDayAttendance, dietaryRequirements);
+        
+            // Reset form
+            event.target.reset();
+        });
     </script>
 </body>
 
