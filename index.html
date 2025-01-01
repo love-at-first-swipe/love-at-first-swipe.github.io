@@ -510,6 +510,7 @@
     </script>
     <!-- RSVP submission -->
     <script type="module">
+        import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm';
         import { submitRSVP } from './love_at_first_swipe.js';
       
         document.querySelector('form').addEventListener('submit', async (event) => {
