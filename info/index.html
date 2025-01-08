@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gráinne & Andy's Wedding</title>
+    <link rel="icon" type="image/x-icon" href="https://love-at-first-swipe.github.io/images/wedding_favicon.png">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,200..900;1,200..900&family=Pinyon+Script&family=Vollkorn:ital,wght@0,400..900;1,400..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="stylesheet" type="text/css" href="https://love-at-first-swipe.github.io/static/flipdown.min.css">
+    <script type="text/javascript" src="https://love-at-first-swipe.github.io/static/flipdown.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            color: rgb(255, 255, 246);
+        }
+
+        .hero-section {
+            text-align: center;
+            background-image: url('https://love-at-first-swipe.github.io/images/hero_image.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            color: white;
+            display: flex;
+            align-items: end;
+            justify-content: space-between;
+            flex-direction: column;
+            font-family: 'Pinyon Script', serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        .hero-section>h1 {
+            margin: 0.4em 1em;
+            font-size: 5em;
+            max-width: 600px;
+        }
+
+        .hero-section>p {
+            margin: 0.3em 2em;
+        }
+
+        .content-section {
+            padding: 120px 15px;
+            font-family: "Vollkorn", serif;
+            font-optical-sizing: auto;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        .grey-bg {
+            background-color: rgb(109, 115, 119);
+        }
+
+        .black-bg {
+            background-color: #212529;
+        }
+
+        .section-heading {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2.5rem;
+        }
+
+        .section-heading.join-us {
+            font-size: 4.5rem;
+        }
+
+        .rsvp-button {
+            color: rgb(109, 115, 119);
+            padding: 10px 80px;
+            font-size: 1.6rem;
+        }
+
+        .rsvp-button:hover {
+            background-color: #5a6268;
+            color: rgb(255, 255, 246);
+        }
+
+        .image-container {
+            border: 1.5px solid white;
+            padding: 10px;
+        }
+
+        /* #countdown-clock {
+            margin: 0px;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            align-content: space-around;
+        } */
+        .silent-link {
+            text-decoration: none;
+            color: inherit;
+        }
+        .silent-link:hover {
+            opacity: 0.25;
+        }
+        .open-new-link {
+            font-size: smaller;
+            margin-left: 5px;
+        }
+        .head-image {
+            height: 265px;
+            position: relative;
+        }
+        .img-head-image, .centered-text-on-image {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+        }
+        #qna-accordion .accordion-button {
+            font-size: 1.5rem;
+            /* outline: none; */
+            border-color: transparent;
+        }
+        #qna-accordion .accordion-button:focus {
+            outline: none;
+            box-shadow: none;
+        }
+        #qna-accordion .accordion-body {
+            font-size: 1.3rem;
+        }
+        #qna-accordion .accordion-button:not(.collapsed){
+            background-color: #fff7d5;
+            color: #574100;
+        }
+        #qna-accordion .accordion-body:not(.collapsed){
+            background-color: floralwhite;
+        }
+
+        .footer-section {
+            text-align: center;
+            background-size: cover;
+            background-position: top;
+            height: 100vh;
+            color: white;
+            font-family: 'Vollkorn', serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        .footer-section>h1 {
+            margin: 0.4em 1em;
+            font-size: 5em;
+            max-width: 600px;
+        }
+
+        .footer-section>p {
+            margin: 0.3em 2em;
+        }
+        #rsvpModal {
+            color: rgb(0,0,20);
+        }
+        #second-day-list li {
+            width: fit-content;
+        }
+        #second-day-list {
+            width: fit-content;
+            margin: auto;
+            margin-bottom: 2rem;
+        }
+        #countdown-clock .flipdown {
+            width: 565px;
+        }
+
+        @media (width < 992px) {
+            .hero-section {
+                align-items: center;
+            }
+            .hero-section>h1 {
+                line-height: 3rem;
+            }
+            .content-section {
+                padding: 60px 10px;
+            }
+            
+        }
+
+        @media (width < 768px) {
+            .section-heading.join-us {
+                font-size: 3rem;
+            }
+        }
+
+        @media (width < 550px) {
+            #countdown-clock .flipdown {
+                width: 345px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Hero Section -->
+    <header class="hero-section">
+        <h1 class="display-3">Gráinne & Andy's <span class="d-none d-lg-block">Wedding</span></h1>
+        <p class="display-6"><span class="d-block d-lg-none" style="font-size: 4.5rem;">Wedding</span> Sunday, 6th July 2025</p>
+    </header>
+
+    <!-- Join Us Section -->
+    <section class="content-section grey-bg">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-6 align-content-center text-center px-2 px-md-5 mb-4 mb-lg-2">
+                    <h2 class="section-heading join-us">Join us as we tie the knot!</h2>
+                    <div>
+                        <h3>When & Where</h3>
+                        <p class="h4">Sunday, 6th July 2025 | 2:30 PM</br>
+                            Markree Castle, Sligo</p>
+                    </div>
+                    <a href="#" class="rsvp-button mt-3 btn btn-lg btn-light" data-bs-toggle="modal" data-bs-target="#rsvpModal">RSVP</a>
+                </div>
+                <div class="col-md-6 px-2 px-md-5">
+                    <div class="image-container">
+                        <img src="https://love-at-first-swipe.github.io/images/castle.png" class="img-fluid"
+                            alt="Castle">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Countdown Section -->
+    <section class="content-section black-bg text-center">
+        <div id="countdown-clock">
+            <div id="flipdown" class="flipdown" style="margin: auto;"></div>
+        </div>
+    </section>
+    <!-- each dial adds 55px width. 33px under 550px screens -->
+
+    <!-- Details Section -->
+    <section class="content-section grey-bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 text-center p-2 px-md-5 mb-5">
+                    <div class="info-box">
+                        <div class="mb-4 mb-md-5 head-image"><img src="https://love-at-first-swipe.github.io/images/dance.png" class="img-fluid img-head-image"
+                            alt="Dancing people" style="max-width: 250px;"></div>
+                        <h3 class="fw-bold mb-4"><u>What to Wear</u></h3>
+                        <div class="h5" style="display: flex;justify-content: center;"><span class="material-symbols-outlined">check</span>Black tie (optional)</div>
+                        <div class="h5" style="display: flex;justify-content: center;"><span class="material-symbols-outlined">close</span> Please note that the Bridal 
+                            party will be wearing champagne so we respectfully ask guests to avoid this colour</div>
+                    </div>
+                </div>
+                <div class="col-md-4 text-center p-2 px-md-5 mb-5">
+                    <div class="info-box">
+                        <div class="mb-3 mb-md-5 head-image"><img src="https://love-at-first-swipe.github.io/images/table.svg" class="img-fluid img-head-image"
+                            alt="Table drawing" style="max-width: 250px;"></div>
+                        <h3 class="fw-bold mb-4"><u>Dietary Requirements</u></h3>
+                        <div class="h5">Please note any dietary requirements / allergies in the RSVP comment box. (Nut allergy, dairy
+                            intolerance, vegan,
+                            vegetarian etc.)</div>
+                    </div>
+                </div>
+                <div class="col-md-4 text-center p-2 px-md-5 mb-5">
+                    <div class="info-box">
+                        <div class="mb-0 mb-md-5 head-image"><img src="https://love-at-first-swipe.github.io/images/bed.png" class="img-fluid img-head-image"
+                            alt="Bed drawing" style="max-width: 250px;"></div>
+                        <h3 class="fw-bold mb-4"><u>Where to stay</u></h3>
+                        <div class="h5" style="display: flex;justify-content: center;">
+                            <a href="https://www.markreecastle.ie/accommodation" class="silent-link" target="_blank">
+                                Markree Castle - Fully Booked<span class="material-symbols-outlined open-new-link">open_in_new</span></a></div>
+                        <div class="h5" style="display: flex;justify-content: center;">
+                            <a href="https://markreecourtyard.com/the-courtyard-accomodation/" class="silent-link" target="_blank">
+                                Markree Courtyard - Limited availability<span class="material-symbols-outlined open-new-link">open_in_new</span></a></div>
+                        <div class="h5" style="display: flex;justify-content: center;">
+                            <a href="https://www.theglasshouse.ie/" class="silent-link" target="_blank">
+                                The Glasshouse hotel<span class="material-symbols-outlined open-new-link">open_in_new</span></a></div>
+                        <div class="h5" style="display: flex;justify-content: center;">
+                            <a href="https://www.sligoparkhotel.com/" class="silent-link" target="_blank">
+                                The Sligo Park Hotel<span class="material-symbols-outlined open-new-link">open_in_new</span></a></div>
+                        <div class="h5" style="display: flex;justify-content: center;">
+                            <a href="https://www.radissonhotels.com/en-us/hotels/radisson-blu-sligo-spa" class="silent-link" target="_blank">
+                                Radisson Blu Hotel<span class="material-symbols-outlined open-new-link">open_in_new</span></a></div>
+                        <div class="h5" style="display: flex;justify-content: center;">
+                            <a href="https://riversidesligo.ie/" class="silent-link" target="_blank">
+                                Riverside Hotel<span class="material-symbols-outlined open-new-link">open_in_new</span></a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Section -->
+    <section class="content-section text-center" style="padding: 50px 0;">
+        <div id="tiktok-video">
+            <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@gradev92/video/7384145423507655969"
+                data-video-id="7384145423507655969" style="max-width: 605px;min-width: 325px;">
+                <section> <a target="_blank" title="@gradev92"
+                        href="https://www.tiktok.com/@gradev92?refer=embed">@gradev92</a> Save the date 💒 💕 <a
+                        title="savethedate" target="_blank"
+                        href="https://www.tiktok.com/tag/savethedate?refer=embed">#savethedate</a> <a title="wedding"
+                        target="_blank" href="https://www.tiktok.com/tag/wedding?refer=embed">#wedding</a> <a
+                        title="feelinggood" target="_blank"
+                        href="https://www.tiktok.com/tag/feelinggood?refer=embed">#feelinggood</a> <a title="invite"
+                        target="_blank" href="https://www.tiktok.com/tag/invite?refer=embed">#invite</a> <a
+                        title="ireland" target="_blank"
+                        href="https://www.tiktok.com/tag/ireland?refer=embed">#ireland</a> <a title="couple"
+                        target="_blank" href="https://www.tiktok.com/tag/couple?refer=embed">#couple</a> <a
+                        title="uniquesavethedate" target="_blank"
+                        href="https://www.tiktok.com/tag/uniquesavethedate?refer=embed">#uniquesavethedate</a> <a
+                        title="friends" target="_blank"
+                        href="https://www.tiktok.com/tag/friends?refer=embed">#friends</a> <a target="_blank"
+                        title="♬ Feeling Good - Michael Bublé"
+                        href="https://www.tiktok.com/music/Feeling-Good-6704981513580054529?refer=embed">♬ Feeling Good
+                        - Michael Bublé</a> </section>
+            </blockquote>
+            <script async src="https://www.tiktok.com/embed.js"></script>
+        </div>
+    </section>
+
+    <!-- Travel Section -->
+    <section class="content-section grey-bg">
+        <div class="container">
+            <div class="row text-center mb-5">
+                <h2 class="section-heading">Travel</h2>
+                <p class="h4"><span class="material-symbols-outlined">location_on</span> Markree Castle, Markree Demesne, Collooney, Co. Sligo, F91 AE81</p>
+            </div>
+            <div class="row">
+                <div class="col-md-4 text-center p-2 px-md-4 mb-5">
+                    <h3 class="fw-bold mb-4"><u>Driving Times</u></h3>
+                    <div class="h5">
+                        <p><b>Belfast → Markree Castle:</b> 2h 40min</p>
+                        <p><b>Drogheda → Markree Castle:</b> 2h 30min</p>
+                        <p><b>Dublin → Markree Castle:</b> 2h 20min</p>
+                    </div>
+                </div>
+                <div class="col-md-4 text-center p-2 px-md-4 mb-5">
+                    <h3 class="fw-bold mb-4"><u>Trains</u></h3>
+                    <p class="h5">Belfast - Dublin - Sligo</p>
+                    <div class="h5">
+                        <p>The Sligo/Longford train departs from Dublin Connolly Station regularly (3h 15m)</p>
+                        <p>Markree Castle is a 7 minute drive from Collooney Train Station</p>
+                    </div>
+                </div>
+                <div class="col-md-4 text-center p-2 px-md-4 mb-5">
+                    <h3 class="fw-bold mb-4"><u>Local Taxis</u></h3>
+                    <div class="h5">
+                        <p><b>Feehily's Travel Centre Sligo</b><br>
+                            (071)-914-3000 | <a href="https://sligobushire.ie/home/taxis" class="link-offset-1 link-light" target="_blank">link</a>
+                        </p>
+                        <p><b>Middleton Travel Sligo</b><br>
+                            Francie: (086)-814-3464 | Keith: (087)-291-8668 | <a href="http://www.middletontravelsligo.com/" class="link-offset-1 link-light" target="_blank">link</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <iframe src="https://www.google.com/maps/embed/v1/view?key=AIzaSyAfbQ8BSfuRII6NsHNg1qSSXVME-6GMQgQ&center=54.174199,-8.461536&zoom=18&maptype=satellite" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gifts Section -->
+    <section class="content-section black-bg">
+        <div class="container">
+            <div class="row text-center mb-5">
+                <h2 class="section-heading">A note on gifts...</h2>
+                <p class="h4">The presence of our friends and family is the greatest gift of all.</p>
+            </div>
+            <div class="text-center my-5">
+                <img src="https://love-at-first-swipe.github.io/images/heart-divider.png" class="img-fluid" alt="divider" style="max-height: 50px;">
+            </div>
+            <div class="row text-center mb-5">
+                <p class="h4">However, if you wish to bless us with a gift, we would greatly appreciate a contribution to our honeymoon fund!<br>
+                     There is a secure postbox in the reception of Markree Castle for any cards.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Wedding Day 2 Section -->
+    <section class="content-section grey-bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 p-2 px-md-5 mb-5 mb-md-2 text-center">
+                    <img src="https://love-at-first-swipe.github.io/images/cocktails.png" class="img-fluid" style="max-height: 500px;"
+                        alt="Cocktails">
+                </div>
+                <div class="col-md-6 px-md-5 text-center position-relative">
+                    <h2 class="section-heading">Wedding Day 2</h2>
+                    <p class="h4">THE PARTY AIN'T OVER YET!<br>
+                        We can't wait to continue the celebrations with you all! </p>
+                    <div class="my-5">
+                        <h3>When & Where</h3>
+                        <p class="h4">Monday, 7th July 2025 | 5:00 PM onwards</br>
+                            Lillie's Cocktail Bar, Sligo</p>
+                    </div>
+                    <div class="h4">
+                        <ul id="second-day-list">
+                            <li>Private party room (upstairs)</li>
+                            <li>Drinks on arrival</li>
+                            <li>Food served: 6PM</li>
+                            <li>Live music: 7PM - 9PM</li>
+                            <li>Open Mic: 9PM</li>
+                        </ul>
+                    </div>
+                    <a href="#" class="rsvp-button mt-3 btn btn-lg btn-light" data-bs-toggle="modal" data-bs-target="#rsvpModal">RSVP</a>
+                    <div class="position-absolute d-none d-lg-block" style="top:-100px;right:0;">
+                        <img src="https://love-at-first-swipe.github.io/images/champagne.png" class="img-fluid" alt="Champagne glasses"
+                        style="max-height: 200px;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Q & A Section -->
+    <section class="content-section black-bg">
+        <div class="container">
+            <div class="row text-center mb-5">
+                <h2 class="section-heading">Q&A</h2>
+            </div>
+            <div class="accordion" id="qna-accordion" style="max-width: 700px;margin: auto;">
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                        When is the RSVP deadline?
+                    </button>
+                  </h2>
+                  <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#qna-accordion">
+                    <div class="accordion-body">Please RSVP by 1st April 2025.</div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                        Is there parking at Markree?
+                    </button>
+                  </h2>
+                  <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#qna-accordion">
+                    <div class="accordion-body">Yes, there is lots of free parking at the castle.</div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                        What should I wear?
+                    </button>
+                  </h2>
+                  <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#qna-accordion">
+                    <div class="accordion-body">The dress code is black tie optional - please avoid wearing champange (bridal party colour).</div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour">
+                        Is it okay to post photos of the wedding on social media?
+                      </button>
+                    </h2>
+                    <div id="flush-collapseFour" class="accordion-collapse collapse" data-bs-parent="#qna-accordion">
+                      <div class="accordion-body">Yes, this is the biggest party we will ever throw please feel free to share it in realtime! 
+                        However we ask that you don't post any photos of the bride and groom until after we have done so ourselves.</div>
+                    </div>
+                  </div>
+                  <div class="accordion-item">
+                    <h2 class="accordion-header">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFive" aria-expanded="false" aria-controls="flush-collapseFive">
+                        Are children allowed to come?
+                      </button>
+                    </h2>
+                    <div id="flush-collapseFive" class="accordion-collapse collapse" data-bs-parent="#qna-accordion">
+                      <div class="accordion-body">No, this is an adult only wedding.</div>
+                    </div>
+                  </div>
+                  <div class="accordion-item">
+                    <h2 class="accordion-header">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseSix" aria-expanded="false" aria-controls="flush-collapseSix">
+                        What if I have a dietary restriction?
+                      </button>
+                    </h2>
+                    <div id="flush-collapseSix" class="accordion-collapse collapse" data-bs-parent="#qna-accordion">
+                      <div class="accordion-body">Please let us know of any dietary requirements when RSVP'ing.</div>
+                    </div>
+                  </div>
+              </div>
+        </div>
+    </section>
+
+    <!-- Final Section -->
+    <section class="footer-section position-relative"
+        style="background-image: url('https://love-at-first-swipe.github.io/images/footer_image.jpg');">
+        <h2 class="text-white centered-text-on-image" style="top: 60%; font-size: 4rem;">WE CAN'T WAIT TO CELEBRATE WITH YOU!</h2>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-center p-3 bg-dark text-white">
+        <p>Designed with ❤️ for Gráinne & Andy's Wedding</p>
+    </footer>
+
+    <!-- RSVP Modal -->
+    <div class="modal fade" id="rsvpModal" tabindex="-1" aria-labelledby="rsvpModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h5 class="modal-title" id="rsvpModalLabel">RSVP</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+            <form>
+                <div class="mb-3">
+                <label for="name" class="form-label">Name</label>
+                <input type="text" class="form-control" id="name" placeholder="Enter your name" required>
+                </div>
+                <div class="mb-3">
+                <label for="surname" class="form-label">Surname</label>
+                <input type="text" class="form-control" id="surname" placeholder="Enter your surname" required>
+                </div>
+                <div class="mb-3">
+                <label for="weddingAttendance" class="form-label">Will you attend the wedding?</label>
+                <select class="form-select" id="weddingAttendance" required>
+                    <option value="" disabled selected>Choose...</option>
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                </select>
+                </div>
+                <div class="mb-3">
+                <label for="secondDayAttendance" class="form-label">Will you attend the 2nd day wedding celebration?</label>
+                <select class="form-select" id="secondDayAttendance" required>
+                    <option value="" disabled selected>Choose...</option>
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                </select>
+                </div>
+                <div class="mb-3">
+                <label for="dietaryRequirements" class="form-label">Dietary Requirements and other comments</label>
+                <textarea class="form-control" id="dietaryRequirements" rows="3" placeholder="Specify any dietary restrictions or allergies"></textarea>
+                </div>
+                <button type="submit" class="btn btn-dark">Submit</button>
+            </form>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Countdown clock -->
+    <script>
+        function defer(method) {
+            if (window.FlipDown) {
+                method();
+            } else {
+                setTimeout(function () { defer(method) }, 50);
+            }
+        }
+        defer(function () {
+            new FlipDown(1751808600, {
+                theme: "light",
+            }).start();
+        });
+        
+    </script>
+    <!-- RSVP submission -->
+    <script type="module">
+        import { submitRSVP } from './love_at_first_swipe.js';
+
+        const rsvpModal = new bootstrap.Modal(document.getElementById('rsvpModal'));
+      
+        document.querySelector('form').addEventListener('submit', async (event) => {
+            event.preventDefault(); // Prevent default form submission behaviour
+        
+            // Get form values
+            const name = document.getElementById('name').value.trim();
+            const surname = document.getElementById('surname').value.trim();
+            const weddingAttendance = document.getElementById('weddingAttendance').value;
+            const secondDayAttendance = document.getElementById('secondDayAttendance').value;
+            const dietaryRequirements = document.getElementById('dietaryRequirements').value.trim();
+
+            // Validate required fields
+            if (!name || !surname || !weddingAttendance || !secondDayAttendance) {
+                alert('Please fill out all required fields.');
+                return;
+            }
+
+            // Call submitRSVP with form values
+            const sendForm = await submitRSVP(name, surname, weddingAttendance, secondDayAttendance, dietaryRequirements);
+        
+            // Reset form
+            event.target.reset();
+            if (sendForm){
+                rsvpModal.hide();
+            }
+        });
+    </script>
+</body>
+
+</html>
