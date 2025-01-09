@@ -280,7 +280,7 @@
             if (cookieVal === "success"){
                 window.location = "https://www.love-at-first-swipe.com/info";
             }
-            
+
             // Selecting elements
             const envelopeWrapper = document.querySelector(".envelope__wrapper");
             const backFlap = document.querySelector(".envelope__back-flap-image-wrapper");
@@ -437,7 +437,7 @@
 
             // Add access submit stuff
             $('#passwordAccessSubmit').on('click',function(){
-                const accessCode = $('#passwordAccessInput')[0].value;
+                const accessCode = $('#passwordAccessInput')[0].value.trim();
                 validateAccessCode(accessCode);
             });
 
