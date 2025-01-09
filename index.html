@@ -133,7 +133,7 @@
     </div>
     <div class="page-wrapper">
         <div class="section">
-            <div class="main-container w-container">
+            <div class="main-container w-container" style="height: 100vh;">
                 <div class="envelope__list-wrapper w-dyn-list">
                     <div role="list" class="envelope__list w-dyn-items">
                         <div role="listitem" class="envelope__item w-dyn-item">
@@ -243,7 +243,7 @@
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header border-bottom-0">
-                    <h2 class="modal-title" id="exampleModalLabel">Input access code</h2>
+                    <h3 class="modal-title" id="exampleModalLabel">Input access code</h3>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
@@ -252,7 +252,7 @@
                     </div>
                 </div>
                 <div class="modal-footer border-top-0">
-                    <button type="button" class="btn btn-dark">Submit</button>
+                    <button type="button" class="btn btn-dark" id="passwordAccessSubmit">Submit</button>
                 </div>
             </div>
         </div>
@@ -267,6 +267,20 @@
         // Self-contained envelope animation script
 
         document.addEventListener("DOMContentLoaded", () => {
+            // Check if cookie exists
+            function getCookieValue(name) {
+                const regex = new RegExp(`(^| )${name}=([^;]+)`)
+                const match = document.cookie.match(regex)
+                if (match) {
+                    return match[2]
+                }
+                return null;
+            }
+            const cookieVal = getCookieValue("access_code");
+            if (cookieVal === "success"){
+                window.location = "https://www.love-at-first-swipe.com/info";
+            }
+            
             // Selecting elements
             const envelopeWrapper = document.querySelector(".envelope__wrapper");
             const backFlap = document.querySelector(".envelope__back-flap-image-wrapper");
@@ -420,13 +434,32 @@
 
             // Start the sequence
             runAnimationSequence();
+
+            // Add access submit stuff
+            $('#passwordAccessSubmit').on('click',function(){
+                const accessCode = $('#passwordAccessInput')[0].value;
+                validateAccessCode(accessCode);
+            });
+
+            async function hashString(input) {
+                const encoder = new TextEncoder();
+                const data = encoder.encode(input);
+                const hashBuffer = await window.crypto.subtle.digest('SHA-256', data); // Use window.crypto.subtle
+                const hashArray = Array.from(new Uint8Array(hashBuffer));
+                return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+            }
+
+            async function validateAccessCode(inputAccess) {
+                const hashedCode = await hashString(inputAccess);
+                if (hashedCode === "cc40535afbe674fe860b3ad62151081c47a6ef6feabb7492eaf9596c857b70e4"){
+                    document.cookie = "access_code=success";
+                    window.location = "https://www.love-at-first-swipe.com/info";
+                }
+            }
         });
     </script>
     <!-- <script src="https://assets.website-files.com/62d2be1149ba53f219cc5224/js/webflow.65a548a08.js"
-        type="module"></script> --><!-- <a class="w-webflow-badge" href="https://webflow.com?utm_campaign=brandjs"><img
-            src="https://d3e54v103j8qbb.cloudfront.net/img/webflow-badge-icon.f67cd735e3.svg" alt=""
-            style="margin-right: 8px; width: 16px;"><img
-            src="https://d1otoma47x30pg.cloudfront.net/img/webflow-badge-text.6faa6a38cd.svg" alt="Made in Webflow"></a> -->
+        type="module"></script> -->
 </body>
 
 </html>
