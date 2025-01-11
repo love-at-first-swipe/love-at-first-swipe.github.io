@@ -126,8 +126,14 @@
             #access-button {
                 position: absolute;
                 left: 50%;
-                bottom: 50px;
+                bottom: 20px;
                 transform: translateX(-50%);
+            }
+
+            @media (max-width: 768px) {
+                #access-button {
+                    bottom: 50px;
+                }
             }
         </style>
     </div>
@@ -146,19 +152,28 @@
                                         <div style="transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(30deg) skew(0deg, 0deg); transform-style: preserve-3d;"
                                             class="envelope__inner-container">
                                             <div style="opacity: 1;" class="envelope__back-closer-shadow"></div>
-                                            <div style="opacity: 0;" class="envelope__back-shadow"></div><img alt=""
+                                            <div style="opacity: 0;" class="envelope__back-shadow"></div><!-- <img alt=""
                                                 loading="eager" style="display: block;"
                                                 src="https://cdn.prod.website-files.com/62d6ebd44d2d5c78b4277d22/62d6f2db791bf963e745fe89_back-combine.webp"
                                                 sizes="100vw"
                                                 srcset="https://cdn.prod.website-files.com/62d6ebd44d2d5c78b4277d22/62d6f2db791bf963e745fe89_back-combine-p-500.webp 500w, https://cdn.prod.website-files.com/62d6ebd44d2d5c78b4277d22/62d6f2db791bf963e745fe89_back-combine-p-800.webp 800w, https://cdn.prod.website-files.com/62d6ebd44d2d5c78b4277d22/62d6f2db791bf963e745fe89_back-combine.webp 840w"
-                                                class="envelope__back-image"><img alt="" loading="eager"
+                                                class="envelope__back-image"> -->
+                                                <img alt=""
+                                                loading="eager" style="display: block;"
+                                                src="https://www.love-at-first-swipe.com/images/front_envelope_background.png"
+                                                class="envelope__back-image">
+                                                <!-- <img alt="" loading="eager"
                                                 style="display: block;"
                                                 src="https://cdn.prod.website-files.com/62d6ebd44d2d5c78b4277d22/62d6f2ed6a8d3d568377c768_inside-flap.webp"
                                                 sizes="100vw"
                                                 srcset="https://cdn.prod.website-files.com/62d6ebd44d2d5c78b4277d22/62d6f2ed6a8d3d568377c768_inside-flap-p-500.webp 500w, https://cdn.prod.website-files.com/62d6ebd44d2d5c78b4277d22/62d6f2ed6a8d3d568377c768_inside-flap-p-800.webp 800w, https://cdn.prod.website-files.com/62d6ebd44d2d5c78b4277d22/62d6f2ed6a8d3d568377c768_inside-flap.webp 840w"
+                                                class="envelope__inside-flap-image-2"> -->
+                                                <img alt="" loading="eager"
+                                                style="display: block;"
+                                                src="https://www.love-at-first-swipe.com/images/open_flap_envelope.png"
                                                 class="envelope__inside-flap-image-2">
                                         </div>
-                                        <div class="envelope__card-wrapper"><img alt="" loading="eager"
+                                        <div class="envelope__card-wrapper"><!-- OK --><img alt="" loading="eager"
                                                 style="display: none;"
                                                 src="https://cdn.prod.website-files.com/62d6ebd44d2d5c78b4277d22/62d72151cc456d73eb15c617_lining.webp"
                                                 sizes="(max-width: 479px) 95vw, (max-width: 767px) 90vw, (max-width: 954px) 88vw, 840px"
@@ -167,34 +182,36 @@
                                             <div style="transform-style: preserve-3d; transform: translate3d(0px, 0%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(90deg) skew(0deg, 0deg);"
                                                 class="envelope__card-image-wrapper">
                                                     <img alt="" loading="eager"
+                                                    src="https://www.love-at-first-swipe.com/images/prefilled_card_image.png"
+                                                    class="envelope__card-image">
+                                                    <!-- <img alt="" loading="eager"
                                                     src="https://cdn.prod.website-files.com/62d6ebd44d2d5c78b4277d22/62d721fc45f8f0dd134c5c47_card.webp"
                                                     sizes="(max-width: 479px) 90vw, (max-width: 767px) 86vw, (max-width: 991px) 83vw, 798px"
                                                     srcset="https://cdn.prod.website-files.com/62d6ebd44d2d5c78b4277d22/62d721fc45f8f0dd134c5c47_card-p-500.webp 500w, https://cdn.prod.website-files.com/62d6ebd44d2d5c78b4277d22/62d721fc45f8f0dd134c5c47_card-p-800.webp 800w, https://cdn.prod.website-files.com/62d6ebd44d2d5c78b4277d22/62d721fc45f8f0dd134c5c47_card-p-1080.webp 1080w, https://cdn.prod.website-files.com/62d6ebd44d2d5c78b4277d22/62d721fc45f8f0dd134c5c47_card-p-1600.webp 1600w, https://cdn.prod.website-files.com/62d6ebd44d2d5c78b4277d22/62d721fc45f8f0dd134c5c47_card.webp 2000w"
-                                                    class="envelope__card-image">
-                                                <div class="envelope__card-text w-richtext">
-                                                    <p>You're cordially invited to the wedding of</p>
-                                                    <h5>Gráinne Devenney</h5>
-                                                    <p>and</p>
-                                                    <h5>Andy Harris</h5>
-                                                    <p>Sunday, July 6 2025</p>
-                                                    <!-- <p>At 2 in the afternoon</p> -->
-                                                    <h6>Markree Castle</h6>
-                                                </div>
-                                            </div><img alt="" loading="eager" style="display: none;"
+                                                    class="envelope__card-image"> -->
+                                            </div><!-- <img alt="" loading="eager" style="display: none;"
                                                 src="https://cdn.prod.website-files.com/62d6ebd44d2d5c78b4277d22/62d720e97b4a73259a5ae839_2014.portrait.back.webp"
                                                 sizes="(max-width: 479px) 95vw, (max-width: 767px) 90vw, (max-width: 954px) 88vw, 840px"
                                                 srcset="https://cdn.prod.website-files.com/62d6ebd44d2d5c78b4277d22/62d720e97b4a73259a5ae839_2014.portrait.back-p-500.webp 500w, https://cdn.prod.website-files.com/62d6ebd44d2d5c78b4277d22/62d720e97b4a73259a5ae839_2014.portrait.back-p-800.webp 800w, https://cdn.prod.website-files.com/62d6ebd44d2d5c78b4277d22/62d720e97b4a73259a5ae839_2014.portrait.back.webp 840w"
+                                                class="envelope__back-image-2"> -->
+                                                <img alt="" loading="eager" style="display: none;"
+                                                src="https://www.love-at-first-swipe.com/images/front_envelope.png"
                                                 class="envelope__back-image-2">
                                         </div>
-                                        <div style="display: none;" class="envelope__flap-wrapper"><img alt=""
+                                        <div style="display: none;" class="envelope__flap-wrapper"><!-- <img alt=""
                                                 loading="eager"
                                                 style="transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(180deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;"
                                                 src="https://cdn.prod.website-files.com/62d6ebd44d2d5c78b4277d22/62d6f2ed6a8d3d568377c768_inside-flap.webp"
                                                 sizes="(max-width: 479px) 95vw, (max-width: 767px) 90vw, (max-width: 954px) 88vw, 840px"
                                                 srcset="https://cdn.prod.website-files.com/62d6ebd44d2d5c78b4277d22/62d6f2ed6a8d3d568377c768_inside-flap-p-500.webp 500w, https://cdn.prod.website-files.com/62d6ebd44d2d5c78b4277d22/62d6f2ed6a8d3d568377c768_inside-flap-p-800.webp 800w, https://cdn.prod.website-files.com/62d6ebd44d2d5c78b4277d22/62d6f2ed6a8d3d568377c768_inside-flap.webp 840w"
+                                                class="envelope__inside-flap-image"> -->
+                                                <img alt=""
+                                                loading="eager"
+                                                style="transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(180deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;"
+                                                src="https://www.love-at-first-swipe.com/images/open_flap_envelope.png"
                                                 class="envelope__inside-flap-image">
                                             <div style="transform-style: preserve-3d; opacity: 0; transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(180deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);"
-                                                class="envelope__flap-shadow-wrapper"><img
+                                                class="envelope__flap-shadow-wrapper"><!-- OK --><img
                                                     src="https://cdn.prod.website-files.com/62d2be1149ba53f219cc5224/62d2c6f4919b1472e21e6214_portrait.webp"
                                                     loading="eager" style="opacity: 1;"
                                                     sizes="(max-width: 479px) 95vw, (max-width: 767px) 90vw, (max-width: 954px) 88vw, 840px"
@@ -202,10 +219,13 @@
                                                     srcset="https://assets.website-files.com/62d2be1149ba53f219cc5224/62d2c6f4919b1472e21e6214_portrait-p-500.webp 500w, https://assets.website-files.com/62d2be1149ba53f219cc5224/62d2c6f4919b1472e21e6214_portrait.webp 840w"
                                                     class="envelope__flap-shadow-image"></div>
                                             <div style="transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(180deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;"
-                                                class="envelope__back-flap-image-wrapper"><img alt="" loading="eager"
+                                                class="envelope__back-flap-image-wrapper"><!-- <img alt="" loading="eager"
                                                     src="https://cdn.prod.website-files.com/62d6ebd44d2d5c78b4277d22/62d6f2e24d2d5c923127d1d8_envelope-flap-empty.webp"
                                                     sizes="(max-width: 479px) 95vw, (max-width: 767px) 90vw, (max-width: 954px) 88vw, 840px"
                                                     srcset="https://cdn.prod.website-files.com/62d6ebd44d2d5c78b4277d22/62d6f2e24d2d5c923127d1d8_envelope-flap-empty-p-500.webp 500w, https://cdn.prod.website-files.com/62d6ebd44d2d5c78b4277d22/62d6f2e24d2d5c923127d1d8_envelope-flap-empty-p-800.webp 800w, https://cdn.prod.website-files.com/62d6ebd44d2d5c78b4277d22/62d6f2e24d2d5c923127d1d8_envelope-flap-empty.webp 840w"
+                                                    class="envelope__back-flap-image"> -->
+                                                    <img alt="" loading="eager"
+                                                    src="https://www.love-at-first-swipe.com/images/closed_flap_envelope.png"
                                                     class="envelope__back-flap-image">
                                                 <div class="envelope__flap-text">Wedding Invitation</div>
                                             </div>
@@ -214,16 +234,19 @@
                                 </div>
                                 <div style="transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(180deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d; filter: brightness(60%);"
                                     class="envelope__front-wrapper">
-                                    <div class="envelope__front"><img alt="" loading="eager"
+                                    <div class="envelope__front"><!-- <img alt="" loading="eager"
                                             src="https://cdn.prod.website-files.com/62d6ebd44d2d5c78b4277d22/62d6f2cfdfe29ecfe9ee8b43_2014.webp"
                                             sizes="(max-width: 479px) 95vw, (max-width: 767px) 90vw, (max-width: 954px) 88vw, 840px"
                                             srcset="https://cdn.prod.website-files.com/62d6ebd44d2d5c78b4277d22/62d6f2cfdfe29ecfe9ee8b43_2014-p-500.webp 500w, https://cdn.prod.website-files.com/62d6ebd44d2d5c78b4277d22/62d6f2cfdfe29ecfe9ee8b43_2014-p-800.webp 800w, https://cdn.prod.website-files.com/62d6ebd44d2d5c78b4277d22/62d6f2cfdfe29ecfe9ee8b43_2014.webp 840w"
+                                            class="envelope__front-image"> -->
+                                            <img alt="" loading="eager"
+                                            src="https://www.love-at-first-swipe.com/images/back_envelope.png"
                                             class="envelope__front-image"><img alt="" loading="eager"
-                                            src="https://love-at-first-swipe.github.io/images/stamp.png"
+                                            src="https://www.love-at-first-swipe.com/images/stamp.png"
                                             class="envelope__front-stamp">
                                         <div class="envelope__addressee-wrapper">
-                                            <div>You're invited,</div>
-                                            <div>Friend name</div>
+                                            <div>You're invited<span id="friend-name-comma" class="d-none">,</span></div>
+                                            <div id="friend-name-div"></div>
                                         </div>
                                     </div>
                                 </div>
@@ -279,6 +302,17 @@
             const cookieVal = getCookieValue("access_code");
             if (cookieVal === "success"){
                 window.location = "https://www.love-at-first-swipe.com/info";
+            }
+
+            // Add guest name
+            const params = new URLSearchParams(window.location.search);
+            if (params.has('name')) {
+                console.log('There is a name');
+                $('#friend-name-comma').removeClass('d-none');
+                const prettyName = params.get('name').replace("_"," ");
+                const doublePrettyName = prettyName.replace("_"," ");
+                const finalName = doublePrettyName.replace(/(^\w{1})|(\s+\w{1})/g, letter => letter.toUpperCase());
+                $('#friend-name-div')[0].innerHTML = finalName;
             }
 
             // Selecting elements
@@ -412,7 +446,7 @@
                         } else if (vw < 900) {
                             scaleFactor = 0.3;
                         } else {
-                            scaleFactor = 0.15;
+                            scaleFactor = 0.05;
                         }
                         const translateY = -110 + 105 * progress; // Slide down to 0px
                         const scaleVal = 1 + scaleFactor * progress;
