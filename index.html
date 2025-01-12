@@ -307,7 +307,6 @@
             // Add guest name
             const params = new URLSearchParams(window.location.search);
             if (params.has('name')) {
-                console.log('There is a name');
                 $('#friend-name-comma').removeClass('d-none');
                 const prettyName = params.get('name').replace("_"," ");
                 const doublePrettyName = prettyName.replace("_"," ");
@@ -353,13 +352,11 @@
                 envelopeWrapper.style.transform = `rotateY(180deg)`;
 
                 // Reset back flap, inside flap, and card to "closed" positions
-                //backFlap.style.display = `inherit`;
                 backFlap.style.transform = `rotateX(0deg)`; // Flap closed
                 shadowFlap.style.transform = `rotateX(0deg)`; // Shadow closed
                 innerContainer.style.transform = 'rotateZ(0deg)';
                 outsideFlap.style.display = 'inherit';
                 insideFlap.style.display = 'none';
-                //insideFlap.style.transform = `rotateX(0deg)`; // Inside flap closed
                 insideFlap1.style.transform = `rotateX(0deg)`; // Inside flap closed
                 cardWrapper.style.transform = `translateY(0px)`; // Card inside the envelope
                 envelopeBack2.style.display = 'inherit'; //Show envelope 2 to hide card
@@ -459,15 +456,39 @@
             function runAnimationSequence() {
                 showFront(); // Step 1: Start with the front visible 
                 setTimeout(() => increaseBrightness(), 0); // Step 1.5: Increase brightness
-                setTimeout(() => flipToBack(), 1000); // Step 2: Flip to the back
-                setTimeout(() => openBackFlap(), 3000); // Step 3: Open the back flap
-                setTimeout(() => slideCardOut(), 3800); // Step 5: Slide the card up
-                setTimeout(() => rotateCard(), 4600); // Step 5.2: Rotate the card
-                setTimeout(() => slideCardDown(), 5400); // Step 5.3: Slide the card down
+                setTimeout(() => flipToBack(), 2000); // Step 2: Flip to the back
+                setTimeout(() => openBackFlap(), 4000); // Step 3: Open the back flap
+                setTimeout(() => slideCardOut(), 4800); // Step 5: Slide the card up
+                setTimeout(() => rotateCard(), 5600); // Step 5.2: Rotate the card
+                setTimeout(() => slideCardDown(), 6400); // Step 5.3: Slide the card down
             }
 
-            // Start the sequence
-            runAnimationSequence();
+            function waitForDomImagesToLoad(images) {
+                const imagePromises = Array.from(images).map(img =>
+                    new Promise((resolve, reject) => {
+                    if (img.complete && img.naturalHeight !== 0) {
+                        resolve(); // Already loaded
+                    } else {
+                        img.onload = () => resolve(); // Wait for load
+                        img.onerror = () => reject(new Error(`Failed to load image: ${img.src}`));
+                    }
+                    })
+                );
+
+                return Promise.all(imagePromises);
+            }
+
+            const images = document.querySelectorAll('img');
+            waitForDomImagesToLoad(images)
+                .then(() => {
+                    console.log('All DOM images loaded!');
+                    // Continue with your code
+                    // Start the sequence
+                    runAnimationSequence();
+                })
+                .catch(error => {
+                    console.error('An image failed to load:', error);
+            });
 
             // Add access submit stuff
             $('#passwordAccessSubmit').on('click',function(){
