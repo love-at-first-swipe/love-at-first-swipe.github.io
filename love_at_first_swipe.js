@@ -5,9 +5,10 @@ const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZS
 const supabase = createClient(supabaseUrl, supabaseKey);
 
 // Function to insert RSVP data
-export const submitRSVP = async (name, surname, weddingAttendance, secondDayAttendance, dietaryRequirements) => {
+export const submitRSVP = async (name, surname, weddingAttendance, secondDayAttendance, dietaryRequirements, plusOneAttendance, plusOneName) => {
     const weddingAttendanceBool = weddingAttendance === 'yes';
     const secondDayAttendanceBool = secondDayAttendance === 'yes';
+    const plusOneAttendanceBool = plusOneAttendance === 'yes';
     
     const { data, error } = await supabase
       .from('rsvp')
@@ -18,6 +19,8 @@ export const submitRSVP = async (name, surname, weddingAttendance, secondDayAtte
           attendance: weddingAttendanceBool,
           day_2_attendance: secondDayAttendanceBool,
           comment: dietaryRequirements,
+          plus_one_attendance: plusOneAttendanceBool,
+          plus_one_name: plusOneName
         },
       ]);
   
