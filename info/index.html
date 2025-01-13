@@ -4,6 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <meta property="og:image" content="https://love-at-first-swipe.github.io/images/preview_image.jpeg">
     <title>Gráinne & Andy's Wedding</title>
     <link rel="icon" type="image/x-icon" href="https://love-at-first-swipe.github.io/images/wedding_favicon.png">
     <!-- Bootstrap CSS -->
@@ -292,6 +294,17 @@
         </div>
     </section>
 
+    <!-- Timeline Section -->
+    <section class="content-section pb-0">
+        <div class="container-fluid">
+            <div class="row justify-content-center">
+                <div class="col-md-8 col-lg-6 col-12 align-content-center text-center px-2 mb-4 mb-lg-2">
+                    <img src="https://love-at-first-swipe.github.io/images/timeline.png" alt="Timeline of wedding" class="w-100">
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Video Section -->
     <section class="content-section text-center" style="padding: 50px 0;">
         <div id="tiktok-video">
@@ -373,8 +386,28 @@
                 <img src="https://love-at-first-swipe.github.io/images/heart-divider.png" class="img-fluid" alt="divider" style="max-height: 50px;">
             </div>
             <div class="row text-center mb-5">
-                <p class="h4">However, if you wish to bless us with a gift, we would greatly appreciate a contribution to our honeymoon fund!<br>
-                     There is a secure postbox in the reception of Markree Castle for any cards.</p>
+                <p class="h4 mb-5">However, if you wish to bless us with a gift, we would greatly appreciate a contribution to our honeymoon fund!</p>
+                <p class="h4 mb-5">There is a secure postbox in the reception of Markree Castle for any cards.</p>
+                <p class="h4">If you prefer an electronic gift, please use the details below.</p>
+            </div>
+            <div class="text-center mb-3">
+                <a class="rsvp-button mt-3 btn btn-light" data-bs-toggle="collapse" href="#bankInfo" role="button" aria-expanded="false" aria-controls="bankInfo"
+                style="font-size: 1.3rem;">
+                    Bank details
+                </a>
+            </div>
+            <div class="collapse" id="bankInfo">
+                <div class="card" style="color: black; max-width: 900px; margin: auto;">
+                    <div class="card-body text-center">
+                        <div>IBAN: IE97AIBK93765706235005</div>
+                        <div>BIC: AIBKIE2D</div>
+                        <div>Account number: 06235005</div>
+                        <div>NSC: 937657</div>
+                    </div>
+                    <div class="card-footer text-center py-3">
+                        Please, make sure to add your name in the concept.
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -392,9 +425,10 @@
                     <p class="h4">THE PARTY AIN'T OVER YET!<br>
                         We can't wait to continue the celebrations with you all! </p>
                     <div class="my-5">
-                        <h3>When & Where</h3>
-                        <p class="h4">Monday, 7th July 2025 | 5:00 PM onwards</br>
-                            Lillie's Cocktail Bar, Sligo</p>
+                        <h3 style="text-decoration: underline;">When & Where</h3>
+                        <p class="h4">Monday, 7th July 2025</p>
+                        <p class="h4">5:00 PM onwards</p>
+                        <p class="h4">Lillie's Cocktail Bar, Sligo</p>
                     </div>
                     <div class="h4">
                         <ul id="second-day-list">
@@ -405,7 +439,6 @@
                             <li>Open Mic: 9PM</li>
                         </ul>
                     </div>
-                    <a href="#" class="rsvp-button mt-3 btn btn-lg btn-light" data-bs-toggle="modal" data-bs-target="#rsvpModal">RSVP</a>
                     <div class="position-absolute d-none d-lg-block" style="top:-100px;right:0;">
                         <img src="https://love-at-first-swipe.github.io/images/champagne.png" class="img-fluid" alt="Champagne glasses"
                         style="max-height: 200px;">
@@ -429,7 +462,7 @@
                     </button>
                   </h2>
                   <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#qna-accordion">
-                    <div class="accordion-body">Please RSVP by 1st April 2025.</div>
+                    <div class="accordion-body">Please RSVP by 1st May 2025.</div>
                   </div>
                 </div>
                 <div class="accordion-item">
@@ -509,32 +542,44 @@
             <div class="modal-body">
             <form>
                 <div class="mb-3">
-                <label for="name" class="form-label">Name</label>
-                <input type="text" class="form-control" id="name" placeholder="Enter your name" required>
+                    <label for="name" class="form-label">Name</label>
+                    <input type="text" class="form-control" id="name" placeholder="Enter your name" required>
                 </div>
                 <div class="mb-3">
-                <label for="surname" class="form-label">Surname</label>
-                <input type="text" class="form-control" id="surname" placeholder="Enter your surname" required>
+                    <label for="surname" class="form-label">Surname</label>
+                    <input type="text" class="form-control" id="surname" placeholder="Enter your surname" required>
                 </div>
                 <div class="mb-3">
-                <label for="weddingAttendance" class="form-label">Will you attend the wedding?</label>
-                <select class="form-select" id="weddingAttendance" required>
-                    <option value="" disabled selected>Choose...</option>
-                    <option value="yes">Yes</option>
-                    <option value="no">No</option>
-                </select>
+                    <label for="weddingAttendance" class="form-label">Will you attend the wedding?</label>
+                    <select class="form-select" id="weddingAttendance" required>
+                        <option value="" disabled selected>Choose...</option>
+                        <option value="yes">Yes</option>
+                        <option value="no">No</option>
+                    </select>
                 </div>
                 <div class="mb-3">
-                <label for="secondDayAttendance" class="form-label">Will you attend the 2nd day wedding celebration?</label>
-                <select class="form-select" id="secondDayAttendance" required>
-                    <option value="" disabled selected>Choose...</option>
-                    <option value="yes">Yes</option>
-                    <option value="no">No</option>
-                </select>
+                    <label for="secondDayAttendance" class="form-label">Will you attend the 2nd day wedding celebration?</label>
+                    <select class="form-select" id="secondDayAttendance" required>
+                        <option value="" disabled selected>Choose...</option>
+                        <option value="yes">Yes</option>
+                        <option value="no">No</option>
+                    </select>
                 </div>
                 <div class="mb-3">
-                <label for="dietaryRequirements" class="form-label">Dietary Requirements and other comments</label>
-                <textarea class="form-control" id="dietaryRequirements" rows="3" placeholder="Specify any dietary restrictions or allergies"></textarea>
+                    <label for="dietaryRequirements" class="form-label">Dietary Requirements and other comments</label>
+                    <textarea class="form-control" id="dietaryRequirements" rows="3" placeholder="Specify any dietary restrictions or allergies"></textarea>
+                </div>
+                <div class="mb-3">
+                    <label for="plusOne" class="form-label">If you were given the option to bring a plus one, will they be attending?</label>
+                    <select class="form-select" id="plusOne" required>
+                        <option value="" disabled selected>Choose...</option>
+                        <option value="yes">Yes</option>
+                        <option value="no">No</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="plusOneName" class="form-label">If yes, please type their full name below</label>
+                    <input type="text" class="form-control" id="plusOneName" placeholder="(Ex. John Doe)">
                 </div>
                 <button type="submit" class="btn btn-dark">Submit</button>
             </form>
@@ -572,6 +617,7 @@
         const cookieVal = getCookieValue("access_code");
         if (!cookieVal || !cookieVal === "success"){
             window.location = "https://www.love-at-first-swipe.com";
+            //console.log('yikes');
         }
         
     </script>
@@ -590,6 +636,8 @@
             const weddingAttendance = document.getElementById('weddingAttendance').value;
             const secondDayAttendance = document.getElementById('secondDayAttendance').value;
             const dietaryRequirements = document.getElementById('dietaryRequirements').value.trim();
+            const plusOneAttendance = document.getElementById('plusOne').value;
+            const plusOneName = document.getElementById('plusOneName').value.trim();
 
             // Validate required fields
             if (!name || !surname || !weddingAttendance || !secondDayAttendance) {
@@ -598,7 +646,7 @@
             }
 
             // Call submitRSVP with form values
-            const sendForm = await submitRSVP(name, surname, weddingAttendance, secondDayAttendance, dietaryRequirements);
+            const sendForm = await submitRSVP(name, surname, weddingAttendance, secondDayAttendance, dietaryRequirements, plusOneAttendance, plusOneName);
         
             // Reset form
             event.target.reset();
