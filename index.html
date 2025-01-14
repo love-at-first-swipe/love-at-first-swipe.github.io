@@ -329,7 +329,9 @@
                 //$('#friend-name-comma').removeClass('d-none');
                 const prettyName = params.get('name').replace("_"," ");
                 const doublePrettyName = prettyName.replace("_"," ");
-                const finalName = doublePrettyName.replace(/(^\w{1})|(\s+\w{1})/g, letter => letter.toUpperCase());
+                const triplePrettyName = doublePrettyName.replace("_"," ");
+                const quadruplePrettyName = triplePrettyName.replace("_"," ");
+                const finalName = quadruplePrettyName.replace(/(^\w{1})|(\s+\w{1})/g, letter => letter.toUpperCase());
                 $('#friend-name-div')[0].innerHTML = finalName;
             }
 
