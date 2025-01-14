@@ -250,7 +250,7 @@
                                             class="envelope__front-image"> -->
                                             <img alt="" loading="eager"
                                             src="https://www.love-at-first-swipe.com/images/back_envelope.png"
-                                            class="envelope__front-image"><img alt="" loading="eager"
+                                            class="envelope__front-image" style="max-width: 90vh;"><img alt="" loading="eager"
                                             src="https://www.love-at-first-swipe.com/images/stamp.png"
                                             class="envelope__front-stamp">
                                         <div class="envelope__addressee-wrapper">
@@ -311,6 +311,7 @@
             const cookieVal = getCookieValue("access_code");
             if (cookieVal === "success"){
                 window.location = "https://www.love-at-first-swipe.com/info";
+                //console.log('ok');
             }
 
             // Add guest name
